@@ -1,0 +1,33 @@
+<h1>Add student</h1>
+
+<form #f="ngForm" [formGroup]="form">
+
+    <label>
+      <p>  Full name:</p>
+<input type="text" formControlName="fullName" required>
+<p *ngIf="!form.controls.fullName.valid && form.controls.fullName.touched">
+    Full name is required
+  </p>
+</label>
+  <label>
+    <p>  Class:</p>
+<input type="text" formControlName="class" required>
+<p *ngIf="!form.controls.class.valid && form.controls.class.touched">
+    Class is required
+  </p>
+</label>
+  <label>
+    <p> Grade:</p>
+<input type="text" formControlName="grade" required>
+<p *ngIf="!form.controls.grade.valid && form.controls.grade.touched">
+    Grade is required
+  </p>
+</label>
+
+<button id="button" [disabled]="!f.valid">send</button>
+<p *ngIf="!f.valid" style="color: red;">  Please fill all the form </p>
+<p *ngIf="f.valid" style="color: green;">  Form is redy to send </p>
+
+
+
+</form>
